@@ -1,0 +1,17 @@
+.gallery__cell-button-delete {
+  position: absolute;
+  background: none;
+  top: 20px;
+  right: 20px;
+  border: none;
+  cursor: pointer;
+  width: 18px;
+  height: 19px;
+}
+
+.gallery__cell-button-delete:hover {
+    opacity: 0.6;
+    -webkit-transition: opacity 500ms linear;
+    -moz-transition: opacity 500ms linear;
+    transition: opacity 500ms linear;
+  }

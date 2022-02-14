@@ -1,0 +1,28 @@
+.profile__info-edit {
+  background-color: #000000;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border: 1px solid white;
+  box-sizing: border-box;
+  margin-top: 15px;
+}
+
+.profile__info-edit:hover {
+  opacity: 0.6;
+  -webkit-transition: opacity 500ms linear;
+  -moz-transition: opacity 500ms linear;
+  transition: opacity 500ms linear;
+}
+
+@media screen and (max-width: 620px) {
+  .profile__info-edit {
+    flex-direction: column;
+    width: 18px;
+    height: 18px;
+    grid-column: 3;
+    position: relative;
+    margin-top: 8px;
+    padding: 4.25px;
+  }
+}

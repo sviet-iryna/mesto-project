@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Место</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <img
+        class="header__logo"
+        src="./images/logo_mesto.svg"
+        alt="Логотип-Место"
+      />
+    </header>
+
+    <main class="content">
+      <section class="profile">
+        <img
+          src="./images/avatar.jpg"
+          alt="фотография пользовотеля"
+          class="profile__avatar"
+        />
+        <div class="profile__info">
+          <h1 class="profile__info-title">Жак-Ив Кусто</h1>
+          <button class="profile__info-edit" type="button">
+            <img
+              class="profile__info-edit-image"
+              src="./images/edit.svg"
+              alt="символ редактирования"
+            />
+          </button>
+          <p class="profile__info-description">Исследователь океана</p>
+        </div>
+        <button class="profile__button-add" type="button">
+          <img
+            class="profile__button-add-image"
+            src="./images/ADD-Vector.svg"
+            alt="плюс - символ добавления"
+          />
+        </button>
+      </section>
+      <section class="gallery">
+        <ul class="gallery__cells">
+          
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">@ 2022 Mesto Russia</p>
+    </footer>
+
+    <div class="popup popup_edit">
+      <section class="popup__window">
+        <button type="button" class="popup__close-button"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form action="#" class="popup__content" name="form-info">
+          <input
+            class="popup__content-item popup__content-name"
+            type="text"
+            name="name"
+            value=""
+            required
+          />
+          <input
+            class="popup__content-item popup__content-job"
+            type="text"
+            name="job"
+            value=""
+            required
+          />
+          <button class="popup__save-button" type="submit">Сохранить</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="popup popup_add">
+      <section class="popup__window">
+        <button type="button" class="popup__close-button"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <form action="#" class="popup__content" name="form-info">
+          <input
+            class="popup__content-item popup__content-place"
+            type="text"
+            name="place"
+            placeholder="Название"
+            required
+          />
+          <input
+            class="popup__content-item popup__content-link"
+            type="text"
+            name="link"
+            placeholder="Ссылка на картинку"
+            required
+          />
+          <button class="popup__save-button" type="submit">Создать</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="popup popup_photo">
+      <section class="popup__photo-window">
+        <button type="button" class="popup__close-button"></button>
+        <img class="popup__photo-image" src="#" alt="" />
+        <h2 class="popup__photo-title"></h2>
+      </section>
+    </div>
+
+    <template id="gallery-template">
+      <li class="gallery__cell">
+        <div class="gallery__cell_content">
+          <img
+            class="gallery__cell-image"
+            src=""
+            alt=""
+          />
+
+          <button class="gallery__cell-button-delete" type="button">
+            <img
+              class="gallery__cell-button-delete-image"
+              src="./images/Trash.svg"
+              alt="Иконка мусори"
+            />
+          </button>
+        </div>
+
+        <div class="gallery__cell-description">
+          <h2 class="gallery__cell-title"></h2>
+          <button class="gallery__button-like" type="button"></button>
+        </div>
+      </li>
+    </template>
+    <script src="./scripts/cards.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

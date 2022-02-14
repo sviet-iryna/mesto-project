@@ -1,0 +1,16 @@
+.profile__info-edit-image {
+  width: 10px;
+  height: 10px;
+  background-color: #000000;
+}
+
+@media screen and (max-width: 620px) {
+  .profile__info-edit-image {
+    width: 7.5px;
+    height: 7.5px;
+    display: block;
+    /* margin-top: 2.5px;
+    padding-right: -5px; */
+
+  }
+}

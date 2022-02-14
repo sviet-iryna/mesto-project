@@ -1,0 +1,17 @@
+.gallery__button-like {
+  background: url(../../../images/like.svg);
+  width: 22px;
+  height: 19px;
+  border: none;
+  cursor: pointer;
+  background-size: cover;
+  margin-top: 28px;
+  margin-right: 20px;
+}
+
+.gallery__button-like:hover {
+  opacity: 0.5;
+  -webkit-transition: opacity 500ms linear;
+  -moz-transition: opacity 500ms linear;
+  transition: opacity 500ms linear;
+}

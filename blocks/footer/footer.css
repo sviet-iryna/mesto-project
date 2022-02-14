@@ -1,0 +1,22 @@
+.footer {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 69px;
+  margin-bottom: 66px;
+  width: 880px;
+}
+@media screen and (max-width: 910px) {
+  .footer {
+    width: calc(100% - (50px + 50px));
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .footer {
+    margin-top: 48px;
+    margin-bottom: 36px;
+    max-width: 320px;
+    width: calc(100vw - (19px + 19px));
+  }
+}

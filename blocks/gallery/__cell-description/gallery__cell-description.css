@@ -1,0 +1,4 @@
+.gallery__cell-description {
+  display: flex;
+  justify-content: space-between;
+}

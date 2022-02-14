@@ -1,0 +1,26 @@
+.popup__window {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  min-width: 430px;
+  min-height: 330px;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding-right: 36px;
+  padding-left: 36px;
+  align-content: center;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__window {
+    min-width: 282px;
+    margin-top: 123px;
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+}

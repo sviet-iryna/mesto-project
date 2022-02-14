@@ -1,0 +1,16 @@
+.content {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 620px) {
+  .content {
+    margin-top: 42px;
+    max-width: 282px;
+  }
+}

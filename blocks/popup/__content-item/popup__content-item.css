@@ -1,0 +1,15 @@
+.popup__content-item {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  margin-bottom: 27px;
+  width: 100%;
+  padding-bottom: 11px;
+}
+.popup__content-item:last-of-type {
+  margin-bottom: 0;
+}

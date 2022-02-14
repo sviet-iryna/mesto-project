@@ -1,0 +1,9 @@
+.popup__photo-window {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  align-content: center;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}

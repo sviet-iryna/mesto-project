@@ -35,4 +35,4 @@
 8. установка локального сервера;
 9. подключение проекта к серверу.
 
-**https://sviet-iryna.github.io/mesto/index.html**
+**https://sviet-iryna.github.io/mesto-project/index.html**

@@ -19,23 +19,36 @@ const formElementAdd = document.querySelector(".popup_add .popup__content");
 
 const popupPhotoImage = document.querySelector(".gallery__cell-image");
 const cardCell = document.querySelector(".gallery__cell");
+const galleryCells = document.querySelector(".gallery__cells");
+const galleryTemplate = document.querySelector("#gallery-template").content;
 
+const popupPhotoImg = document.querySelector(".popup__photo-image");
+const popupPhotoTitle = document.querySelector(".popup__photo-title");
+const popupPhoto = document.querySelector(".popup_photo");
 
-function openPopupEdit() {
-  nameInput.value = profileName.textContent;
-  jobInput.value = profileJob.textContent;
-  popupEdit.classList.add("popup_opened");
+function closePopupHandler(evt) {
+  const parentPopup = evt.target.closest(".popup");
+  closePopup(parentPopup);
 }
 
-function closePopup(evt) {
-  const parentPopup = evt.target.closest(".popup");
-  parentPopup.classList.remove("popup_opened");
+function closePopup(popup) {
+  popup.classList.remove("popup_opened");
+}
+
+function openPopup(popup) {
+  popup.classList.add("popup_opened");
 }
 
 function openAddPopup() {
   placeInput.value = "";
   linkInput.value = "";
-  popupAdd.classList.add("popup_opened");
+  openPopup(popupAdd);
+}
+
+function openPopupEdit() {
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileJob.textContent;
+  openPopup(popupEdit);
 }
 
 function setLike(evt) {
@@ -50,68 +63,68 @@ function delCell(evt) {
 function setListenerForCloseButton() {
   const closeButtons = document.querySelectorAll(".popup__close-button");
   closeButtons.forEach(function (item) {
-    item.addEventListener("click", closePopup);
+    item.addEventListener("click", closePopupHandler);
   });
 }
 setListenerForCloseButton();
 
-function formSubmitHandler(evt) {
+function submitFormHandler(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
-  closePopup(evt);
+  closePopup(popupEdit);
 }
 
 function setCards() {
   cards.forEach(function (card) {
-    setCard(card["name"], card["link"]);
+    const element = createCard(card);
+  galleryCells.append(element);
   });
 }
 setCards();
 
-function formSubmitHandlerAdd(evt) {
+function submitAddFormHandler(evt) {
   evt.preventDefault();
-  setCard(placeInput.value, linkInput.value);
-  closePopup(evt);
-  evt.addButton
+  const obj = {
+    name: placeInput.value,
+    link: linkInput.value
+  }
+  const element = createCard(obj);
+  galleryCells.prepend(element);
+  closePopup(popupAdd);
 }
 
-function setCard(name, link) {
-  const galleryTemplate = document.querySelector("#gallery-template").content;
+function createCard(obj) {
   const galleryElement = galleryTemplate
     .querySelector(".gallery__cell")
     .cloneNode(true);
-  const galleryCells = document.querySelector(".gallery__cells");
   const titleCell = galleryElement.querySelector(".gallery__cell-title");
   const linkCell = galleryElement.querySelector(".gallery__cell-image");
-
   const likeButton = galleryElement.querySelector(".gallery__button-like");
   const delButton = galleryElement.querySelector(
     ".gallery__cell-button-delete"
   );
-  titleCell.textContent = name;
-  linkCell.src = link;
-  linkCell.alt = name;
+  titleCell.textContent = obj.name;
+  linkCell.src = obj.link;
+  linkCell.alt = obj.name;
   likeButton.addEventListener("click", setLike);
-  galleryCells.prepend(galleryElement);
   delButton.addEventListener("click", delCell);
   linkCell.addEventListener("click", selectCard);
+  return galleryElement;
 }
 
 function selectCard(evt) {
   const cell = evt.target.closest(".gallery__cell");
   const imageCell = cell.querySelector(".gallery__cell-image");
   const titleCell = cell.querySelector(".gallery__cell-title");
-  const popupPhotoImg = document.querySelector(".popup__photo-image");
-  const popupPhotoTitle = document.querySelector(".popup__photo-title");
-  const popupPhoto = document.querySelector(".popup_photo");
+
   popupPhotoImg.src = imageCell.src;
   popupPhotoTitle.textContent = titleCell.textContent;
-  popupPhoto.classList.add("popup_opened");
+  openPopup(popupPhoto);
 }
 
-formElement.addEventListener("submit", formSubmitHandler);
-formElementAdd.addEventListener("submit", formSubmitHandlerAdd);
+formElement.addEventListener("submit", submitFormHandler);
+formElementAdd.addEventListener("submit", submitAddFormHandler);
 
 editButton.addEventListener("click", openPopupEdit);
 addButton.addEventListener("click", openAddPopup);

@@ -117,9 +117,10 @@ function selectCard(evt) {
   const cell = evt.target.closest(".gallery__cell");
   const imageCell = cell.querySelector(".gallery__cell-image");
   const titleCell = cell.querySelector(".gallery__cell-title");
-
+  popupPhotoImg.alt = titleCell.textContent;
   popupPhotoImg.src = imageCell.src;
   popupPhotoTitle.textContent = titleCell.textContent;
+
   openPopup(popupPhoto);
 }
 
